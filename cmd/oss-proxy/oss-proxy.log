@@ -1,0 +1,183 @@
+[INFO][oss-proxy][#]51:  User Login: testuser
+[INFO][oss-proxy][#]67:  user login detected:testuser
+[INFO][oss-proxy][#]67:  SSH server established
+[INFO][oss-proxy][#]51:  Incoming channel: session
+[INFO][oss-proxy][#]67:  Channel accepted
+[INFO][oss-proxy][#]67:  Request: %vsubsystem
+[INFO][oss-proxy][#]51:  Subsystem: sftp
+[INFO][oss-proxy][#]51:  channel accepted: true
+[INFO][oss-proxy][#]51:  sftp client exited session.
+[INFO][oss-proxy][#]51:  User Login: testuser
+[INFO][oss-proxy][#]67:  user login detected:testuser
+[INFO][oss-proxy][#]67:  SSH server established
+[INFO][oss-proxy][#]51:  Incoming channel: session
+[INFO][oss-proxy][#]67:  Channel accepted
+[INFO][oss-proxy][#]67:  Request: %vsubsystem
+[INFO][oss-proxy][#]51:  Subsystem: sftp
+[INFO][oss-proxy][#]51:  channel accepted: true
+[INFO][oss-proxy][#]51:  User Login: testuser
+[INFO][oss-proxy][#]67:  user login detected:testuser
+[INFO][oss-proxy][#]67:  SSH server established
+[INFO][oss-proxy][#]51:  Incoming channel: session
+[INFO][oss-proxy][#]67:  Channel accepted
+[INFO][oss-proxy][#]67:  Request: %vsubsystem
+[INFO][oss-proxy][#]51:  Subsystem: sftp
+[INFO][oss-proxy][#]51:  channel accepted: true
+[INFO][oss-proxy][#]51:  User Login: testuser
+[INFO][oss-proxy][#]67:  user login detected:testuser
+[INFO][oss-proxy][#]67:  SSH server established
+[INFO][oss-proxy][#]51:  Incoming channel: session
+[INFO][oss-proxy][#]67:  Channel accepted
+[INFO][oss-proxy][#]67:  Request: %vsubsystem
+[INFO][oss-proxy][#]51:  Subsystem: sftp
+[INFO][oss-proxy][#]51:  channel accepted: true
+[INFO][oss-proxy][#]51:  User Login: testuser
+[INFO][oss-proxy][#]67:  user login detected:testuser
+[INFO][oss-proxy][#]67:  SSH server established
+[INFO][oss-proxy][#]51:  Incoming channel: session
+[INFO][oss-proxy][#]67:  Channel accepted
+[INFO][oss-proxy][#]67:  Request: %vsubsystem
+[INFO][oss-proxy][#]51:  Subsystem: sftp
+[INFO][oss-proxy][#]51:  channel accepted: true
+[INFO][oss-proxy][#]51:  User Login: testuser
+[INFO][oss-proxy][#]67:  user login detected:testuser
+[INFO][oss-proxy][#]67:  SSH server established
+[INFO][oss-proxy][#]51:  Incoming channel: session
+[INFO][oss-proxy][#]67:  Channel accepted
+[INFO][oss-proxy][#]67:  Request: %vsubsystem
+[INFO][oss-proxy][#]51:  Subsystem: sftp
+[INFO][oss-proxy][#]51:  channel accepted: true
+[INFO][oss-proxy][#]51:  sftp client exited session.
+[INFO][oss-proxy][#]51:  sftp client exited session.
+[INFO][oss-proxy][#]51:  sftp client exited session.
+[INFO][oss-proxy][#]51:  sftp client exited session.
+[INFO][oss-proxy][#]51:  User Login: testuser
+[INFO][oss-proxy][#]67:  user login detected:testuser
+[INFO][oss-proxy][#]67:  SSH server established
+[INFO][oss-proxy][#]51:  Incoming channel: session
+[INFO][oss-proxy][#]67:  Channel accepted
+[INFO][oss-proxy][#]67:  Request: %vsubsystem
+[INFO][oss-proxy][#]51:  Subsystem: sftp
+[INFO][oss-proxy][#]51:  channel accepted: true
+[INFO][oss-proxy][#]51:  sftp client exited session.
+[INFO][oss-proxy][#]51:  sftp client exited session.
+[INFO][oss-proxy][#]51:  User Login: testuser
+[INFO][oss-proxy][#]67:  user login detected:testuser
+[INFO][oss-proxy][#]67:  SSH server established
+[INFO][oss-proxy][#]51:  Incoming channel: session
+[INFO][oss-proxy][#]67:  Channel accepted
+[INFO][oss-proxy][#]67:  Request: %vsubsystem
+[INFO][oss-proxy][#]51:  Subsystem: sftp
+[INFO][oss-proxy][#]51:  channel accepted: true
+[INFO][oss-proxy][#]51:  sftp client exited session.
+[FATAL][oss-proxy][#]75:  failed to listen for connectionlisten tcp 0.0.0.0:2022: bind: address already in use
+[FATAL][oss-proxy][#]75:  failed to listen for connectionlisten tcp 0.0.0.0:2022: bind: address already in use
+[FATAL][oss-proxy][#]75:  failed to listen for connectionlisten tcp 0.0.0.0:2022: bind: address already in use
+[FATAL][oss-proxy][#]75:  failed to listen for connectionlisten tcp 0.0.0.0:2022: bind: address already in use
+[INFO][oss-proxy][#]51:  User Login: testuser
+[INFO][oss-proxy][#]67:  user login detected:testuser
+[INFO][oss-proxy][#]67:  SSH server established
+[INFO][oss-proxy][#]51:  Incoming channel: session
+[INFO][oss-proxy][#]67:  Channel accepted
+[INFO][oss-proxy][#]67:  Request: %vsubsystem
+[INFO][oss-proxy][#]51:  Subsystem: sftp
+[INFO][oss-proxy][#]51:  channel accepted: true
+[INFO][oss-proxy][#]51:  sftp client exited session.
+[INFO][oss-proxy][#]51:  User Login: testuser
+[INFO][oss-proxy][#]67:  user login detected:testuser
+[INFO][oss-proxy][#]67:  SSH server established
+[INFO][oss-proxy][#]51:  Incoming channel: session
+[INFO][oss-proxy][#]67:  Channel accepted
+[INFO][oss-proxy][#]67:  Request: %vsubsystem
+[INFO][oss-proxy][#]51:  Subsystem: sftp
+[INFO][oss-proxy][#]51:  channel accepted: true
+[INFO][oss-proxy][#]51:  User Login: testuser
+[INFO][oss-proxy][#]67:  user login detected:testuser
+[INFO][oss-proxy][#]67:  SSH server established
+[INFO][oss-proxy][#]51:  Incoming channel: session
+[INFO][oss-proxy][#]67:  Channel accepted
+[INFO][oss-proxy][#]67:  Request: %vsubsystem
+[INFO][oss-proxy][#]51:  Subsystem: sftp
+[INFO][oss-proxy][#]51:  channel accepted: true
+[INFO][oss-proxy][#]51:  User Login: testuser
+[INFO][oss-proxy][#]67:  user login detected:testuser
+[INFO][oss-proxy][#]67:  SSH server established
+[INFO][oss-proxy][#]51:  Incoming channel: session
+[INFO][oss-proxy][#]67:  Channel accepted
+[INFO][oss-proxy][#]67:  Request: %vsubsystem
+[INFO][oss-proxy][#]51:  Subsystem: sftp
+[INFO][oss-proxy][#]51:  channel accepted: true
+[INFO][oss-proxy][#]51:  User Login: testuser
+[INFO][oss-proxy][#]67:  user login detected:testuser
+[INFO][oss-proxy][#]67:  SSH server established
+[INFO][oss-proxy][#]51:  Incoming channel: session
+[INFO][oss-proxy][#]67:  Channel accepted
+[INFO][oss-proxy][#]67:  Request: %vsubsystem
+[INFO][oss-proxy][#]51:  Subsystem: sftp
+[INFO][oss-proxy][#]51:  channel accepted: true
+[INFO][oss-proxy][#]51:  User Login: testuser
+[INFO][oss-proxy][#]67:  user login detected:testuser
+[INFO][oss-proxy][#]67:  SSH server established
+[INFO][oss-proxy][#]51:  Incoming channel: session
+[INFO][oss-proxy][#]67:  Channel accepted
+[INFO][oss-proxy][#]67:  Request: %vsubsystem
+[INFO][oss-proxy][#]51:  Subsystem: sftp
+[INFO][oss-proxy][#]51:  channel accepted: true
+[INFO][oss-proxy][#]51:  User Login: testuser
+[INFO][oss-proxy][#]67:  user login detected:testuser
+[INFO][oss-proxy][#]67:  SSH server established
+[INFO][oss-proxy][#]51:  Incoming channel: session
+[INFO][oss-proxy][#]67:  Channel accepted
+[INFO][oss-proxy][#]67:  Request: %vsubsystem
+[INFO][oss-proxy][#]51:  Subsystem: sftp
+[INFO][oss-proxy][#]51:  channel accepted: true
+[INFO][oss-proxy][#]51:  sftp client exited session.
+[INFO][oss-proxy][#]51:  sftp client exited session.
+[INFO][oss-proxy][#]51:  sftp client exited session.
+[INFO][oss-proxy][#]51:  sftp client exited session.
+[INFO][oss-proxy][#]51:  sftp client exited session.
+[INFO][oss-proxy][#]51:  User Login: testuser
+[INFO][oss-proxy][#]67:  user login detected:testuser
+[INFO][oss-proxy][#]67:  SSH server established
+[INFO][oss-proxy][#]51:  Incoming channel: session
+[INFO][oss-proxy][#]67:  Channel accepted
+[INFO][oss-proxy][#]67:  Request: %vsubsystem
+[INFO][oss-proxy][#]51:  Subsystem: sftp
+[INFO][oss-proxy][#]51:  channel accepted: true
+[INFO][oss-proxy][#]51:  User Login: testuser
+[INFO][oss-proxy][#]67:  user login detected:testuser
+[INFO][oss-proxy][#]67:  SSH server established
+[INFO][oss-proxy][#]51:  Incoming channel: session
+[INFO][oss-proxy][#]67:  Channel accepted
+[INFO][oss-proxy][#]67:  Request: %vsubsystem
+[INFO][oss-proxy][#]51:  Subsystem: sftp
+[INFO][oss-proxy][#]51:  channel accepted: true
+[INFO][oss-proxy][#]51:  User Login: testuser
+[INFO][oss-proxy][#]67:  user login detected:testuser
+[INFO][oss-proxy][#]67:  SSH server established
+[INFO][oss-proxy][#]51:  Incoming channel: session
+[INFO][oss-proxy][#]67:  Channel accepted
+[INFO][oss-proxy][#]67:  Request: %vsubsystem
+[INFO][oss-proxy][#]51:  Subsystem: sftp
+[INFO][oss-proxy][#]51:  channel accepted: true
+[INFO][oss-proxy][#]51:  User Login: testuser
+[INFO][oss-proxy][#]67:  user login detected:testuser
+[INFO][oss-proxy][#]67:  SSH server established
+[INFO][oss-proxy][#]51:  Incoming channel: session
+[INFO][oss-proxy][#]67:  Channel accepted
+[INFO][oss-proxy][#]67:  Request: %vsubsystem
+[INFO][oss-proxy][#]51:  Subsystem: sftp
+[INFO][oss-proxy][#]51:  channel accepted: true
+[INFO][oss-proxy][#]51:  User Login: testuser
+[INFO][oss-proxy][#]67:  user login detected:testuser
+[INFO][oss-proxy][#]67:  SSH server established
+[INFO][oss-proxy][#]51:  Incoming channel: session
+[INFO][oss-proxy][#]67:  Channel accepted
+[INFO][oss-proxy][#]67:  Request: %vsubsystem
+[INFO][oss-proxy][#]51:  Subsystem: sftp
+[INFO][oss-proxy][#]51:  channel accepted: true
+[INFO][oss-proxy][#]51:  sftp client exited session.
+[INFO][oss-proxy][#]51:  sftp client exited session.
+[INFO][oss-proxy][#]51:  sftp client exited session.
+[INFO][oss-proxy][#]51:  sftp client exited session.
+[INFO][oss-proxy][#]51:  sftp client exited session.
