@@ -141,7 +141,7 @@ func (fs *filesystem) Filecmd(r *sftp.Request) error {
 	defer fs.filesLock.Unlock()
 
 	// Update the OSS file list with the requested file path
-	if files, err := fs.FetchFiles(filepath.Dir(r.Filepath)); err == nil {
+	if files, err := fs.FetchFiles(filepath.Dir(r.Filepath), false); err == nil {
 		fs.files = files
 	} else {
 		return err
@@ -223,11 +223,16 @@ func (f listerat) ListAt(ls []os.FileInfo, offset int64) (int, error) {
 	return n, nil
 }
 
-func (fs *filesystem) FetchFiles(prefix string) (files map[string]*memFile, err error) {
+func (fs *filesystem) FetchFiles(prefix string, recursive bool) (files map[string]*memFile, err error) {
 	files = make(map[string]*memFile, 0)
 	prefix = strings.TrimLeft(prefix+"/", "/")
 
-	br, err := Bucket.List(prefix, "/", "", 1000)
+	delim := "/"
+	if recursive {
+		delim = ""
+	}
+
+	br, err := Bucket.List(prefix, delim, "", 1000)
 	if err != nil {
 		return files, fmt.Errorf("unable to get list of oss files: %s", err)
 	}
@@ -241,7 +246,7 @@ func (fs *filesystem) FetchFiles(prefix string) (files map[string]*memFile, err 
 		path := filepath.Join("/", strings.TrimRight(content.Key, "/"))
 		fn := filepath.Base(path)
 
-		if prefix == content.Key {
+		if strings.HasSuffix(content.Key, "/") {
 			files[path] = newMemFile(fn, true, true, content.Size, modtime)
 		} else {
 			files[path] = newMemFile(fn, false, false, content.Size, modtime)
@@ -271,7 +276,7 @@ func (fs *filesystem) Filelist(r *sftp.Request) (sftp.ListerAt, error) {
 	switch r.Method {
 	case "List":
 		// Update the OSS file list with the requested file path
-		if files, err := fs.FetchFiles(r.Filepath); err == nil {
+		if files, err := fs.FetchFiles(r.Filepath, false); err == nil {
 			fs.files = files
 		} else {
 			return nil, err
@@ -294,7 +299,7 @@ func (fs *filesystem) Filelist(r *sftp.Request) (sftp.ListerAt, error) {
 		return listerat(files), nil
 	case "Stat":
 		// Update the OSS file list with the requested file path
-		if files, err := fs.FetchFiles(filepath.Dir(r.Filepath)); err == nil {
+		if files, err := fs.FetchFiles(filepath.Dir(r.Filepath), false); err == nil {
 			fs.files = files
 		} else {
 			return nil, err
@@ -308,7 +313,7 @@ func (fs *filesystem) Filelist(r *sftp.Request) (sftp.ListerAt, error) {
 		return listerat([]os.FileInfo{file}), nil
 	case "Readlink":
 		// Update the OSS file list with the requested file path
-		if files, err := fs.FetchFiles(filepath.Dir(r.Filepath)); err == nil {
+		if files, err := fs.FetchFiles(filepath.Dir(r.Filepath), false); err == nil {
 			fs.files = files
 		} else {
 			return nil, err
