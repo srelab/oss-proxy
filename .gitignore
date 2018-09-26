@@ -1,2 +1,4 @@
 .idea
 rsa/*
+
+cmd/oss-proxy/*.log
