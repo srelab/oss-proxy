@@ -21,8 +21,8 @@ func (ShareHandler) Get(ctx echo.Context) error {
 	prefix := ctx.Param("*")
 	expire, err := strconv.Atoi(ctx.QueryParam("expire"))
 
-	if err != nil {
-		expire = 10
+	if err != nil || expire == 0 {
+		expire = 20
 	}
 
 	if prefix == "" {
