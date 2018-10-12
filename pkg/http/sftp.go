@@ -22,14 +22,15 @@ func (handler SftpHandler) Init(g *echo.Group) {
 func (SftpHandler) Get(ctx echo.Context) error {
 	prefix := ctx.Param("*")
 	share := ctx.QueryParam("share")
+
 	expire, err := strconv.Atoi(ctx.QueryParam("expire"))
+	if err != nil {
+		expire = 10
+	}
+
 	recursive, err := strconv.ParseBool(ctx.QueryParam("recursive"))
 	if err != nil {
 		recursive = false
-	}
-
-	if err != nil {
-		expire = 10
 	}
 
 	if prefix == "" {
