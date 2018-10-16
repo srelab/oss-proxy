@@ -28,6 +28,11 @@ type PrivilegeConfig struct {
 	Port string
 }
 
+type AkConfig struct {
+	ID     string
+	Secret string
+}
+
 type GlobalConfig struct {
 	Name    string
 	Keypath string
@@ -36,6 +41,7 @@ type GlobalConfig struct {
 	Sftp      *SftpConfig
 	Log       *LogConfig
 	Privilege *PrivilegeConfig
+	Ak        *AkConfig
 }
 
 var (
@@ -69,6 +75,10 @@ func ParseConfig(ctx *cli.Context) {
 		Privilege: &PrivilegeConfig{
 			Host: ctx.String("privilege.host"),
 			Port: ctx.String("privilege.port"),
+		},
+		Ak: &AkConfig{
+			ID:     ctx.String("ak.id"),
+			Secret: ctx.String("ak.secret"),
 		},
 	}
 }

@@ -19,6 +19,8 @@ type BaseError struct {
 	Details interface{} `json:"details,omitempty"`
 }
 
+var ApiErrorParameter = BaseError{Code: 10008, Message: "Parameter error"}
+
 func FailureResponse(ctx echo.Context, status int, baseError BaseError, err error, v ...interface{}) error {
 	str := ""
 	if err != nil {

@@ -16,6 +16,8 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/srelab/ossproxy/pkg/g"
+
 	"github.com/denverdino/aliyungo/oss"
 	"github.com/pkg/errors"
 	"github.com/pkg/sftp"
@@ -56,10 +58,10 @@ type filesystem struct {
 
 func InitFileSystem() {
 	Client = oss.NewOSSClient(
-		"",
+		"oss-cn-shenzhen",
 		false,
-		"",
-		"",
+		g.Config().Ak.ID,
+		g.Config().Ak.Secret,
 		false,
 	)
 

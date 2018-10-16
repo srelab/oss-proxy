@@ -64,6 +64,8 @@ func main() {
 					&cli.StringFlag{Name: "http.host", Value: "0.0.0.0", Usage: "http server host"},
 					&cli.StringFlag{Name: "http.port", Value: "8088", Usage: "http server port"},
 					&cli.StringFlag{Name: "http.debug", Value: "0", Usage: "http server debug"},
+					&cli.StringFlag{Name: "ak.id", Value: "0", Usage: "aliyun access key id", EnvVar: "AK_ID"},
+					&cli.StringFlag{Name: "ak.secret", Value: "0", Usage: "aliyun access key secret", EnvVar: "AK_SECRET"},
 					&cli.StringFlag{Name: "privilege.host", Usage: "privilege server host"},
 					&cli.StringFlag{Name: "privilege.port", Usage: "privilege server port"},
 					&cli.StringFlag{Name: "log.dir", Value: "./", Usage: "the log file is written to the path"},
