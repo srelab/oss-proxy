@@ -13,8 +13,11 @@ import (
 
 type CopyHandler struct{}
 type CopyPayLoad struct {
-	Bucket string   `json:"bucket"`
-	Paths  []string `json:"paths"`
+	Bucket string `json:"bucket"`
+	Paths  []struct {
+		Src string `json:"src"`
+		Dst string `json:"dst"`
+	} `json:"paths"`
 }
 
 type CopyResult struct {
@@ -50,17 +53,17 @@ func (CopyHandler) Put(ctx echo.Context) error {
 
 	for _, path := range payload.Paths {
 		if _, err := bucket.PutCopy(
-			filepath.Join("contract", prefix, path),
+			filepath.Join("contract", prefix, path.Dst),
 			oss.Private, oss.CopyOptions{},
-			filepath.Join("/", payload.Bucket, path),
+			filepath.Join("/", payload.Bucket, path.Src),
 		); err != nil {
 			errmsg := strings.Replace(err.Error(), "Aliyun API Error:", "", 1)
-			result.Errors = append(result.Errors, map[string]string{"path": path, "msg": errmsg})
+			result.Errors = append(result.Errors, map[string]string{"path": path.Src, "msg": errmsg})
 
 			continue
 		}
 
-		result.Successes = append(result.Successes, map[string]string{"path": path})
+		result.Successes = append(result.Successes, map[string]string{"path": path.Src})
 	}
 
 	return SuccessResponse(ctx, http.StatusOK, &BaseResult{
