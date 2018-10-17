@@ -32,6 +32,7 @@ func (handler CopyHandler) Init(g *echo.Group) {
 func (CopyHandler) Put(ctx echo.Context) error {
 	result := CopyResult{}
 	payload := CopyPayLoad{}
+
 	if err := ctx.Bind(&payload); err != nil {
 		return FailureResponse(ctx, http.StatusBadRequest, ApiErrorParameter, err)
 	}
