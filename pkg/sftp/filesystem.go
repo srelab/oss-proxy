@@ -229,39 +229,52 @@ func (fs *filesystem) FetchFiles(prefix string, recursive bool) (files map[strin
 	files = make(map[string]*memFile, 0)
 	prefix = strings.TrimLeft(prefix+"/", "/")
 
+	max := 1000
 	delim := "/"
 	if recursive {
 		delim = ""
 	}
 
-	br, err := Bucket.List(prefix, delim, "", 1000)
+	resp2files := func(resp *oss.ListResp) {
+		for _, content := range resp.Contents {
+			modtime, err := time.Parse(time.RFC3339, content.LastModified)
+			if err != nil {
+				modtime = time.Now()
+			}
+
+			path := filepath.Join("/", strings.TrimRight(content.Key, "/"))
+			fn := filepath.Base(path)
+
+			if strings.HasSuffix(content.Key, "/") {
+				files[path] = newMemFile(fn, true, true, content.Size, modtime)
+			} else {
+				files[path] = newMemFile(fn, false, false, content.Size, modtime)
+			}
+
+			files[path].Fsize = content.Size
+		}
+
+		for _, commonPrefix := range resp.CommonPrefixes {
+			path := filepath.Join("/", strings.TrimRight(commonPrefix, "/"))
+			fn := filepath.Base(path)
+
+			files[path] = newMemFile(fn, true, false, 0, time.Now())
+		}
+	}
+
+	resp, err := Bucket.List(prefix, delim, "", max)
 	if err != nil {
 		return files, fmt.Errorf("unable to get list of oss files: %s", err)
 	}
 
-	for _, content := range br.Contents {
-		modtime, err := time.Parse(time.RFC3339, content.LastModified)
+	resp2files(resp)
+	for resp.IsTruncated {
+		fmt.Println(resp.IsTruncated, resp.NextMarker)
+		resp, err = Bucket.List(prefix, delim, resp.NextMarker, max)
+
 		if err != nil {
-			modtime = time.Now()
+			return files, fmt.Errorf("unable to get list of oss files: %s", err)
 		}
-
-		path := filepath.Join("/", strings.TrimRight(content.Key, "/"))
-		fn := filepath.Base(path)
-
-		if strings.HasSuffix(content.Key, "/") {
-			files[path] = newMemFile(fn, true, true, content.Size, modtime)
-		} else {
-			files[path] = newMemFile(fn, false, false, content.Size, modtime)
-		}
-
-		files[path].Fsize = content.Size
-	}
-
-	for _, commonPrefix := range br.CommonPrefixes {
-		path := filepath.Join("/", strings.TrimRight(commonPrefix, "/"))
-		fn := filepath.Base(path)
-
-		files[path] = newMemFile(fn, true, false, 0, time.Now())
 	}
 
 	return files, err

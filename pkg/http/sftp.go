@@ -6,7 +6,6 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
-
 	"time"
 
 	"strconv"
@@ -49,7 +48,7 @@ func (SftpHandler) Get(ctx echo.Context) error {
 		return FailureResponse(ctx, http.StatusInternalServerError, BaseError{
 			Code:    10010,
 			Message: "sftp internal error",
-		}, nil)
+		}, err)
 	}
 
 	if share != "" {
@@ -135,7 +134,7 @@ func (SftpHandler) Archive(ctx echo.Context) error {
 			return FailureResponse(ctx, http.StatusInternalServerError, BaseError{
 				Code:    10010,
 				Message: "sftp internal error",
-			}, nil)
+			}, err)
 		}
 
 		for fp, file := range files {
