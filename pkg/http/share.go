@@ -19,7 +19,7 @@ func (handler ShareHandler) Init(g *echo.Group) {
 }
 
 func (ShareHandler) Get(ctx echo.Context) error {
-	prefix := ctx.Param("*")
+	prefix, _ := url.PathUnescape(ctx.Param("*"))
 	expire, err := strconv.Atoi(ctx.QueryParam("expire"))
 
 	if err != nil || expire == 0 {
@@ -30,9 +30,8 @@ func (ShareHandler) Get(ctx echo.Context) error {
 		prefix = "unknow"
 	}
 
-	path, _ := url.PathUnescape(prefix)
 	return SuccessResponse(ctx, http.StatusOK, &BaseResult{
-		Result:  sftp.Bucket.SignedURL(path, time.Now().Add(time.Duration(expire)*time.Minute)),
+		Result:  sftp.Bucket.SignedURL(prefix, time.Now().Add(time.Duration(expire)*time.Minute)),
 		Success: true,
 	})
 }

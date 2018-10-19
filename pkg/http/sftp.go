@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"net/url"
 	"os"
 	"path/filepath"
 	"time"
@@ -71,7 +72,7 @@ func (SftpHandler) Get(ctx echo.Context) error {
 }
 
 func (SftpHandler) Delete(ctx echo.Context) error {
-	prefix := ctx.Param("*")
+	prefix, _ := url.PathUnescape(ctx.Param("*"))
 	recursive, err := strconv.ParseBool(ctx.QueryParam("recursive"))
 	if err != nil {
 		recursive = false
